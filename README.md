@@ -11,7 +11,7 @@ Both the users and the services provided have benefited from these kinds of syst
 
 ## Original repo:
 
- - [Project Repo link](https://github.com/entbappy/Deep-Learning-Based-Fasion-Recommendation-System)
+ - [Project Repo link](https://github.com/deepakthakur-92/Fashion-Recommender-System)
 
 
 ## Demo Video:
@@ -25,3 +25,36 @@ This is a methods of identifying similar products check various aspects on pictu
 
  - [High Resolution Dataset link](https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset)
  - [Low Resolution Dataset link](https://www.kaggle.com/paramaggarwal/fashion-product-images-small)
+
+
+# STEPS to run this project:
+
+You can also use others images
+
+## STEP 01: 
+Clone the repository
+
+```bash
+git clone https://github.com/deepakthakur-92/Fashion-Recommender-System.git
+```
+
+## STEP 02: 
+Create an environment
+
+
+```bash
+conda create -n fasion python=3.7 -y
+```
+
+## STEP 03: 
+Install the requirements
+
+
+```bash
+pip install -r requirements.txt
+```
+
+# Authors:
+```bash
+Author: Deepak Thakur
+```
