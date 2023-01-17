@@ -138,11 +138,11 @@ if __name__=='__main__':
 
     try:
         logging.info(">>>>> stage 01 started")
-        Embeddings.embedding((config_path = parsed_args.config, params_path= parsed_args.params)
+        Embeddings.embedding(config_path=parsed_args.config, params_path=parsed_args.params)
         logging.info("stage_01 completed!>>>>>")
     except Exception as e:
         logging.exception(e)
-        raise e)
+        raise e
         
 
 
