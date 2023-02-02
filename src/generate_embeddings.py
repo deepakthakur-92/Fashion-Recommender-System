@@ -10,7 +10,7 @@ import os
 import logging
 import pickle
 import tensorflow as tf
-from tensorflow.python.keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 import numpy as np
@@ -81,7 +81,7 @@ class Embeddings:
 
         model = tf.keras.Sequential([
             model,
-            GlobalMaxPooling2D
+            GlobalMaxPooling2D()
          ])
         
         return model
@@ -93,12 +93,14 @@ class Embeddings:
         config = read_yaml(config_path)
         params = read_yaml(params_path)
 
-        artifacts_dir = config['artifacts']['artifacts_dir']
-        pickle_format_data_dir = config['artifacts']['pickle_format_data_dir']
-        img_pickle_file_name = config['artifacts']['img_pickle_file_name']
+        artifacts = config['artifacts']
 
-        feature_extraction_dir = config['artifacts']['feature_extraction_dir']
-        extracted_features_name = config['artifacts']['extracted_features_name']
+        artifacts_dir = artifacts['artifacts_dir']
+        pickle_format_data_dir = artifacts['pickle_format_data_dir']
+        img_pickle_file_name = artifacts['img_pickle_file_name']
+
+        feature_extraction_dir = artifacts['feature_extraction_dir']
+        extracted_features_name = artifacts['extracted_features_name']
 
         raw_local_dir_path = os.path.join(artifacts_dir, pickle_format_data_dir)
         feature_extraction_path = os.path.join(artifacts_dir,feature_extraction_dir)
