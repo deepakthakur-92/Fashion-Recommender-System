@@ -18,19 +18,13 @@ params = read_yaml('params.yaml')
 artifacts = config['artifacts']
 artifacts_dir = artifacts['artifacts_dir']
 
-#upload
+# upload
 upload_image_dir = artifacts['upload_image_dir']
 uploadn_path = os.path.join(artifacts_dir, upload_image_dir)
 
-# pickle_format_data_dir
-pickle_format_data_dir = artifacts['pickle_format_data_dir']
-img_pickle_file_name = artifacts['img_pickle_file_name']
 
-# params_path
-#weight = params['base']['weight']
-#include_tops = params['base']['include_top']
 
-#loading
+# loading
 feature_list = np.array(pickle.load(open('artifacts/extracted_features/embedding.pkl','rb')))
 filenames = pickle.load(open('artifacts/pickle_format_data/filenames.pkl','rb'))
 
