@@ -48,11 +48,11 @@ class Embeddings:
         """
 
         img = image.load_img(img_path, target_size=(224,224))
-        img_array =  image.img_to_array(img)
-        expanded_img_array = np.expand_dims(img_array, axis=0)
-        preprocessed_img = preprocess_input(expanded_img_array)
-        result = model.predict(preprocessed_img).flatten()
-        normalized_result = result/ norm(result)
+        img_array =  image.img_to_array(img) # converting image into numpy array
+        expanded_img_array = np.expand_dims(img_array, axis=0) # reshaping the image (224,224,3) to (1,224,224,3) because keras libraries accepts batch of images
+        preprocessed_img = preprocess_input(expanded_img_array) # preprocess_input - to give the image array to ResNET into correct format(same as imagenet data input) 
+        result = model.predict(preprocessed_img).flatten() # here we get the image shape as (1,2048) and after flatten it will be (2048,) in 1d array
+        normalized_result = result/ norm(result) # to get the value b/w 0 and 1
 
         return normalized_result
 
@@ -121,7 +121,7 @@ class Embeddings:
             filenames.append(os.path.join(data_path,file))
 
         
-        feature_list = []
+        feature_list = [] # [[2048],[2048],[],[]....]
 
         for file in tqdm(filenames):
             feature_list.append(Embeddings.extract_features(file,model))
