@@ -54,6 +54,14 @@ Install the requirements
 pip install -r requirements.txt
 ```
 
+## STEP 04: 
+To open the streamlit 
+
+
+```bash
+streamlit run app.py
+```
+
 # Authors:
 ```bash
 Author: Deepak Thakur
